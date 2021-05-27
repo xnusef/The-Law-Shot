@@ -11,6 +11,7 @@ public class CreditsBack : MonoBehaviour
     int estado = 0;
 
     public Animator transition;
+    public Animator music;
     public float transitiontime = 1f;
 
     void Update()
@@ -74,6 +75,7 @@ public class CreditsBack : MonoBehaviour
     IEnumerator LoadLevel(int levelindex)
     {
         transition.SetTrigger("Start");
+        music.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitiontime);
 
@@ -89,6 +91,7 @@ public class CreditsBack : MonoBehaviour
     IEnumerator QuitGame()
     {
         transition.SetTrigger("Start");
+        music.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitiontime);
 
