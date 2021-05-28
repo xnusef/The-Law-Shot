@@ -8,13 +8,20 @@ public class EnemySpawner : MonoBehaviour
     float[] xpos;
     float[] ypos;
     int randomPos;
+    bool[] existingEnemies;
     Vector3 whereSpawning;
-    public float spawnRate = 4f;
+    public float minSpawnRate = 4f;
+    public float maxSpawnRate = 4f;
     float nextSpawn = 4;
 
     // Start is called before the first frame update
     void Start()
     {
+        existingEnemies = new bool[17];
+        for(int i = 0 ; i < 17 ; i++)
+        {
+            existingEnemies[i] = false;
+        }
         xpos = new float[17];
         xpos[0] = 19f;
         xpos[1] = -203f;
@@ -58,12 +65,20 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Time.time > nextSpawn)
         {
-            nextSpawn = Time.time + spawnRate;
             randomPos = Random.Range(0,16);
-            whereSpawning = new Vector3(xpos[randomPos], ypos[randomPos], 0);
-            var myEnemy = GameObject.Instantiate(enemy);
-            myEnemy.transform.SetParent(enemySpawner.transform, false);
-            enemy.transform.position = whereSpawning;
+            if (existingEnemies[randomPos] == false)
+            {
+                nextSpawn = Time.time + Random.Range(minSpawnRate,maxSpawnRate);
+                Debug.Log(Time.time);
+                whereSpawning = new Vector3(xpos[randomPos], ypos[randomPos], 0);
+                var myEnemy = GameObject.Instantiate(enemy);
+                myEnemy.transform.SetParent(enemySpawner.transform, false);
+                enemy.transform.position = whereSpawning;
+                existingEnemies[randomPos] = true;
+            } else {
+                nextSpawn = Time.time + 1;
+            }
+            
         }
     }
 }
