@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     Vector3 whereSpawning;
     public float minSpawnRate = 4f;
     public float maxSpawnRate = 4f;
-    float nextSpawn = 4;
+    float nextSpawn = 4f;
 
     // Start is called before the first frame update
     void Start()
@@ -69,14 +69,13 @@ public class EnemySpawner : MonoBehaviour
             if (existingEnemies[randomPos] == false)
             {
                 nextSpawn = Time.time + Random.Range(minSpawnRate,maxSpawnRate);
-                Debug.Log(Time.time);
                 whereSpawning = new Vector3(xpos[randomPos], ypos[randomPos], 0);
                 var myEnemy = GameObject.Instantiate(enemy);
                 myEnemy.transform.SetParent(enemySpawner.transform, false);
                 enemy.transform.position = whereSpawning;
                 existingEnemies[randomPos] = true;
             } else {
-                nextSpawn = Time.time + 1;
+                nextSpawn = Time.time + 1f;
             }
             
         }
