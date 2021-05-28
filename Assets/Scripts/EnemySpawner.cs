@@ -10,9 +10,10 @@ public class EnemySpawner : MonoBehaviour
     int randomPos;
     bool[] existingEnemies;
     Vector3 whereSpawning;
-    public float minSpawnRate = 4f;
-    public float maxSpawnRate = 4f;
+    public float minSpawnRate = 1f;
+    public float maxSpawnRate = 2f;
     float nextSpawn = 4f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +75,7 @@ public class EnemySpawner : MonoBehaviour
                 myEnemy.transform.SetParent(enemySpawner.transform, false);
                 enemy.transform.position = whereSpawning;
                 existingEnemies[randomPos] = true;
+
             } else {
                 nextSpawn = Time.time + 1f;
             }

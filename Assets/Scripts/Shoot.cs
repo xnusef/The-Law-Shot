@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
 
 public class Shoot : MonoBehaviour
 {
@@ -11,15 +10,6 @@ public class Shoot : MonoBehaviour
     public GameObject bulletCount;
     public Sprite[] mySprites;
     bool reloading = false;
-
-    public float timeLeft = 10;
-    public Text countdown;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        bulletCount.GetComponent<Image>().sprite = mySprites[bullets];
-    }
 
     // Update is called once per frame
     void Update()
@@ -32,17 +22,6 @@ public class Shoot : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && reloading == false && bullets > 0) 
         {
             Shooted();
-        } /*else if (Input.GetMouseButtonDown(0) && reloading == true)
-        {
-            reloading = false;
-        }*/
-        if (timeLeft > 0)
-        {
-            timeLeft -= Time.deltaTime;
-            countdown.text = ((int) timeLeft).ToString();
-        } else if (timeLeft == 0)
-        {
-            //EndGame
         }
     }
 
@@ -50,6 +29,12 @@ public class Shoot : MonoBehaviour
     {
         bullets = bullets - 1;
         bulletCount.GetComponent<Image>().sprite = mySprites[bullets];
+
+
+        if (Input.mousePosition == FindGameObjectWithTag("Enemy").transform.position)
+        {
+
+        }
     }
 
     void ReloadBullets()
