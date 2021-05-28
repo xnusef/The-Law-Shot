@@ -9,27 +9,15 @@ public class Shoot : MonoBehaviour
 
     public int bullets = 6;
     public GameObject bulletCount;
-    public Sprite b0;
-    public Sprite b1;
-    public Sprite b2;
-    public Sprite b3;
-    public Sprite b4;
-    public Sprite b5;
-    public Sprite b6;
     public Sprite[] mySprites;
     bool reloading = false;
+
+    public float timeLeft = 10;
+    public Text countdown;
 
     // Start is called before the first frame update
     void Start()
     {
-        mySprites = new Sprite[7];
-        mySprites[0] = b0;
-        mySprites[1] = b1;
-        mySprites[2] = b2;
-        mySprites[3] = b3;
-        mySprites[4] = b4;
-        mySprites[5] = b5;
-        mySprites[6] = b6;
         bulletCount.GetComponent<Image>().sprite = mySprites[bullets];
     }
 
@@ -48,6 +36,14 @@ public class Shoot : MonoBehaviour
         {
             reloading = false;
         }*/
+        if (timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            countdown.text = ((int) timeLeft).ToString();
+        } else if (timeLeft == 0)
+        {
+            //EndGame
+        }
     }
 
     public void Shooted()
