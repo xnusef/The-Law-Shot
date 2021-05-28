@@ -18,6 +18,7 @@ public class Shoot : MonoBehaviour
     public Sprite b6;
     public Sprite[] mySprites;
     bool reloading = false;
+    public float timeRemaining = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,10 @@ public class Shoot : MonoBehaviour
         {
             reloading = false;
         }*/
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
     }
 
     public void Shooted()

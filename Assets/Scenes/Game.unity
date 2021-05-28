@@ -213,13 +213,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullets: 6
   bulletCount: {fileID: 103697318}
-  b0: {fileID: 21300000, guid: c91f33679da49e3429ad2413fc02b561, type: 3}
-  b1: {fileID: 21300000, guid: ff3c412edc35c3a4481952618e04867a, type: 3}
-  b2: {fileID: 21300000, guid: b274d4975e978e74da5c35bf6faeeead, type: 3}
-  b3: {fileID: 21300000, guid: 99ba22c850674934f95f5ece1fcd5798, type: 3}
-  b4: {fileID: 21300000, guid: eef36aca910b2f74fa07f05643161dc3, type: 3}
-  b5: {fileID: 21300000, guid: 6a9ab5540c3356b40bc0f38c6bab970e, type: 3}
-  b6: {fileID: 21300000, guid: afd3ac9ae4531c948bca3a20ff489540, type: 3}
+  b0: {fileID: 6112890488319390909, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
+  b1: {fileID: 830317617348258784, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
+  b2: {fileID: -7779215486825634471, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
+  b3: {fileID: 7431529995326980795, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
+  b4: {fileID: -7803065417098437583, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
+  b5: {fileID: -7976837497307082302, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
+  b6: {fileID: 874343242196921964, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
   mySprites: []
 --- !u!1001 &305087177
 PrefabInstance:
