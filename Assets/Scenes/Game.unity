@@ -221,7 +221,6 @@ MonoBehaviour:
   - {fileID: -7803065417098437583, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
   - {fileID: -7976837497307082302, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
   - {fileID: 874343242196921964, guid: 4757cf8163e73e4498844fc2c0a8336f, type: 3}
-  startRaycast: {fileID: 1228147435}
 --- !u!1001 &305087177
 PrefabInstance:
   m_ObjectHideFlags: 0

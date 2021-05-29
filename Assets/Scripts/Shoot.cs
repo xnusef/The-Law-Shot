@@ -31,9 +31,6 @@ public class Shoot : MonoBehaviour
         bulletCount.GetComponent<Image>().sprite = mySprites[bullets];
 
         //Debug.Log(hit.transform.name);
- 
-
-
 
     }
 
