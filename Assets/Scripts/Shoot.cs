@@ -11,6 +11,8 @@ public class Shoot : MonoBehaviour
     public Sprite[] mySprites;
     bool reloading = false;
 
+    private Vector2 clickedpos;
+
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +32,15 @@ public class Shoot : MonoBehaviour
         bullets = bullets - 1;
         bulletCount.GetComponent<Image>().sprite = mySprites[bullets];
 
-        //Debug.Log(hit.transform.name);
+
+        clickedpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(clickedpos, clickedpos);
+        if (hit != null)
+        {
+            Debug.Log(hit);
+            Transform objectHit = hit.transform;
+            Debug.Log(objectHit.parent.name);
+        }
 
     }
 
