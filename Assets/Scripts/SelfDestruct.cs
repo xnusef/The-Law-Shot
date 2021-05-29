@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class SelfDestruct : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBDestroing);
 
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
     public void Shooted()

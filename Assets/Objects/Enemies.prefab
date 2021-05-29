@@ -84,6 +84,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1299658276694667685}
+  - component: {fileID: -2801109691628263548}
+  - component: {fileID: 453608682157201216}
   m_Layer: 5
   m_Name: Enemies
   m_TagString: Untagged
@@ -108,6 +110,32 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 562, y: 88}
+  m_AnchoredPosition: {x: 219, y: 113}
   m_SizeDelta: {x: 116.51, y: 138.8327}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &-2801109691628263548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299658276694667682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 91.654175, y: 129.62225, z: 1}
+  m_Center: {x: -6.7997437, y: 2.80484, z: 0}
+--- !u!114 &453608682157201216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299658276694667682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c3bc91bec214d47a52349a77163bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBDestroing: 3
