@@ -30,15 +30,8 @@ public class Shoot : MonoBehaviour
         bullets = bullets - 1;
         bulletCount.GetComponent<Image>().sprite = mySprites[bullets];
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo))
-        {
-            if (hitInfo.collider.gameObject.tag == "ClickArea")
-            {
-                Debug.Log(hitInfo.transform.name);
-            }
-        }
+        //Debug.Log(hit.transform.name);
+ 
 
 
 
