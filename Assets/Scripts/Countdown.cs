@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class Countdown : MonoBehaviour
 {
 
-    public float timeLeft = 10;
+    public static float timeLeft = 15f;
+    float timenow;
     
     public Text countdown;
 
@@ -17,7 +18,13 @@ public class Countdown : MonoBehaviour
             countdown.text = ((int) timeLeft).ToString();
         } else if (timeLeft < 0)
         {
+            countdown.text = ("0");
             //EndGame
         }
+    }
+
+    public void ChangeTime(float time)
+    {
+        timeLeft -= time;
     }
 }

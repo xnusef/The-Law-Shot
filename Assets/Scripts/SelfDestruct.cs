@@ -1,6 +1,4 @@
-using System.Globalization;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
@@ -8,10 +6,18 @@ public class SelfDestruct : MonoBehaviour
 
     public float timeBDestroing = 3f;
 
+    public GameObject timer;
+    private Countdown script;
+
+
+    public float quitTime = 2;
+    public float addTime = 3;
+
+    bool shooted = false;
 
     void Start()
     {
-
+        script = timer.GetComponent<Countdown>();
         StartCoroutine(SelfDestruction());
     }
 
@@ -19,7 +25,18 @@ public class SelfDestruct : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBDestroing);
 
-        Destroy(this.gameObject);
+
+        if (shooted == false)
+        {
+            script.ChangeTime(quitTime);
+            Destroy(this.gameObject);
+        }
+        if (shooted == true)
+        {
+            script.ChangeTime(-addTime);
+            Destroy(this.gameObject);
+        }
+        
     }
 
     public void Shooted()
